@@ -1,0 +1,1 @@
+Application code supplied for your use and modification. External data, Leaflet library, Esri basemaps, and other services retain their own licenses and attribution requirements.

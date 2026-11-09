@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:ex="http://earth.google.com/kml/ext">
+<Document id="document">
+	<ex:extension>base64;CooBCoEBCn8KAggBEnkKdwokCiAKAwjQDxoHCNLtZRD_ASEAAAAAAADwPykAAAAAAAAAABgAEg8KCAitgO8HEP8BEKAfGAAaGgoHCP___wcQQBIICK2A7wcQ_wEYoB8gACgAIgkIARIFCP___wcqFwgBEggI____BxD_ARkAAAAAAADwPyAAEgQIARAA</ex:extension>
+	<name>Data Center Visibility</name>
+	<gx:CascadingStyle kml:id="__managed_style_08DD89C42842F2DA03C4_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_08DD89C42842F2DA03C4_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_08DD89C42842F2DA03C4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_08DD89C42842F2DA03C4_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_08DD89C42842F2DA03C4_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="09AC2785B742F2DA03BC">
+		<name>Data Center</name>
+		<LookAt>
+			<longitude>-103.4218027388361</longitude>
+			<latitude>48.38358423970079</latitude>
+			<altitude>672.470013540419</altitude>
+			<heading>0.1177567399961108</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>7469.230228392407</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_08DD89C42842F2DA03C4</styleUrl>
+		<Point>
+			<coordinates>-103.4180792845897,48.38058309682201,685.1486790441699</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0D99AC17C342F2DA8D5C">
+		<name>Residential Address</name>
+		<LookAt>
+			<longitude>-103.4062618246369</longitude>
+			<latitude>48.38856122187163</latitude>
+			<altitude>669.7623007811225</altitude>
+			<heading>0.1177567393925728</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>7875.530207594857</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_08DD89C42842F2DA03C4</styleUrl>
+		<Point>
+			<coordinates>-103.3823943867013,48.38730774425814,656.9923178700641</coordinates>
+		</Point>
+	</Placemark>
+	<Folder id="08A0DED76642F2DBEDF8">
+		<name>Concentric Distance Rings</name>
+		<open>1</open>
+		<styleUrl>#__managed_style_08DD89C42842F2DA03C4</styleUrl>
+	</Folder>
+	<Folder id="0E46D8387942F2DBEDFE">
+		<name>Concentric Distance Rings</name>
+		<open>1</open>
+		<styleUrl>#__managed_style_08DD89C42842F2DA03C4</styleUrl>
+	</Folder>
+	<Folder id="065A33DA3142F2E127FC">
+		<name>Data Center Visibility &amp; Terrain Analysis</name>
+		<open>1</open>
+		<styleUrl>#__managed_style_08DD89C42842F2DA03C4</styleUrl>
+	</Folder>
+	<Folder id="0FF387B42442F2E12800">
+		<name>Data Center Visibility &amp; Terrain Analysis</name>
+		<open>1</open>
+		<styleUrl>#__managed_style_08DD89C42842F2DA03C4</styleUrl>
+	</Folder>
+	<Folder id="0EACC37D1942F2E2F6BE">
+		<name>Ground-Level Sightline Analysis to Data Center</name>
+		<open>1</open>
+		<styleUrl>#__managed_style_08DD89C42842F2DA03C4</styleUrl>
+	</Folder>
+	<Folder id="036A46050D42F2E2F6C4">
+		<name>Ground-Level Sightline Analysis to Data Center</name>
+		<open>1</open>
+		<styleUrl>#__managed_style_08DD89C42842F2DA03C4</styleUrl>
+	</Folder>
+</Document>
+</kml>
