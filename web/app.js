@@ -87,7 +87,7 @@ function renderResidentialProperties(){
   const result=propertyResults.get(prop.id);
   const tip=result?`${prop.label} · Terrain: ${styleText(result.state)}`:prop.label;
   const marker=L.marker(latlon(prop),{icon:propertyIcon(prop)}).addTo(residentialLayer).bindTooltip(tip);
-  marker.on('click',e=>{L.DomEvent.stopPropagation(e);selectProperty(prop.id,true);});
+  marker.on('click',e=>{L.DomEvent.stopPropagation(e);selectProperty(prop.id);});
   propertyMarkers.set(prop.id,marker);
  }
 }
@@ -145,12 +145,11 @@ function renderPropertyList(){
   const result=propertyResults.get(prop.id),state=result?.state||'unknown',active=prop.id===selectedPropertyId?' active':'';
   return `<button class="property-option${active}" data-property-id="${prop.id}"><span class="property-icon">⌂</span><span><strong>${prop.label}</strong><br><span class="property-meta">${(hav(prop,C)/MI).toFixed(2)} mi</span></span><span class="property-result ${state}">${styleText(state)}</span></button>`;
  }).join('');
- list.querySelectorAll('[data-property-id]').forEach(btn=>btn.addEventListener('click',()=>selectProperty(btn.dataset.propertyId,true)));
+ list.querySelectorAll('[data-property-id]').forEach(btn=>btn.addEventListener('click',()=>selectProperty(btn.dataset.propertyId)));
 }
-function selectProperty(id,fly=false){
+function selectProperty(id){
  const prop=propertyById(id);if(!prop)return;
  setView(propertyPoint(prop),prop.label,prop.id);
- if(fly)map.flyTo(latlon(prop),14,{duration:1.0});
 }
 function drawSelection(){sight.clearLayers();if(!selected)return;const bearing=heading(selected,C),D=hav(selected,C);const color=styleColor(model?.state||'unknown');L.polyline([latlon(selected),latlon(C)],{color:'#101c29',weight:6,opacity:.7}).addTo(sight);L.polyline([latlon(selected),latlon(C)],{color:color,weight:3,opacity:.95,dashArray:model?.state==='blocked'?'5,6':null}).addTo(sight);const span=18,cones=Math.min(D*.35,500);const left=move(selected,cones,bearing-span),right=move(selected,cones,bearing+span);L.polygon([latlon(selected),latlon(left),latlon(right)],{stroke:false,fillColor:'#4a8fbe',fillOpacity:.10,interactive:false}).addTo(sight);L.circleMarker(latlon(selected),{radius:8,color:'#fff',weight:2,fillColor:'#2674b6',fillOpacity:1}).addTo(sight).bindPopup(`${chosenLabel}<br>Click elsewhere to move observer`);el('compass').textContent=`${Math.round(bearing)}° · ${azName(bearing)}`;
 }
@@ -219,13 +218,11 @@ el('showVideoLocation').onclick=()=>{map.setView(videoLocation.getLatLng(),Math.
 el('openOverlay').onclick=()=>el('overlayDialog').showModal();
 el('closeOverlay').onclick=()=>el('overlayDialog').close();
 el('frameSelect').oninput=()=>{const n=Number(el('frameSelect').value);el('siteFrame').src=`./video-frames/frame-${String(n).padStart(2,'0')}.jpg`;el('frameLabel').textContent=`Frame near ${Math.min(34,4*n-2)} seconds`;};
-function updateOverlay(){const shape=el('facilityOverlay');shape.hidden=!el('showOverlay').checked;shape.style.left=el('overlayX').value+'%';shape.style.top=el('overlayY').value+'%';shape.style.width=el('overlayWidth').value+'%';shape.style.height=el('overlayHeight').value+'%';}
-for(const id of ['showOverlay','overlayX','overlayY','overlayWidth','overlayHeight'])el(id).addEventListener('input',updateOverlay);updateOverlay();
 const resizeHandle=el('analysisResize'),work=el('layout').querySelector('.work'),drawer=work.querySelector('.analysis-drawer');
 function setAnalysisHeight(height){const max=Math.max(220,work.clientHeight-150);const h=clamp(Math.round(height),220,max);el('layout').style.setProperty('--analysis-height',h+'px');resizeHandle.setAttribute('aria-valuemax',String(max));resizeHandle.setAttribute('aria-valuenow',String(h));}
 resizeHandle.addEventListener('pointerdown',e=>{if(!drawer.open)return;e.preventDefault();const startY=e.clientY,startHeight=drawer.getBoundingClientRect().height;resizeHandle.setPointerCapture(e.pointerId);const move=e=>setAnalysisHeight(startHeight+startY-e.clientY);const end=()=>{resizeHandle.removeEventListener('pointermove',move);resizeHandle.removeEventListener('pointerup',end);resizeHandle.removeEventListener('pointercancel',end);};resizeHandle.addEventListener('pointermove',move);resizeHandle.addEventListener('pointerup',end);resizeHandle.addEventListener('pointercancel',end);});
 resizeHandle.addEventListener('keydown',e=>{if(e.key!=='ArrowUp'&&e.key!=='ArrowDown')return;e.preventDefault();setAnalysisHeight(drawer.getBoundingClientRect().height+(e.key==='ArrowUp'?20:-20));});
-selectProperty(DEFAULT_PROPERTY_ID,false);loadDEM();
+selectProperty(DEFAULT_PROPERTY_ID);loadDEM();
 
 function exportChart(id, filename){
  const svg=el(id).querySelector('svg');

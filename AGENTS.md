@@ -1,5 +1,9 @@
 # Project Instructions
 
+## Git workflow
+
+- After completing and verifying changes, follow `skills/git-push/SKILL.md` to commit and push them to the configured upstream.
+
 ## Viewer Launch
 
 - Always preview and test the data center visibility viewer in Google Chrome.
