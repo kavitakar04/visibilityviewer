@@ -5,7 +5,8 @@ const RESIDENTIAL_PROPERTIES=[
  {id:'res-2',label:'Residence 2',lat:48.3878324,lon:-103.3817375},
  {id:'res-3',label:'Residence 3',lat:48.3500379,lon:-103.4757342},
  {id:'res-4',label:'Residence 4',lat:48.4442536,lon:-103.4695970},
- {id:'res-5',label:'Residence 5',lat:48.3444077,lon:-103.5596871}
+ {id:'res-5',label:'Residence 5',lat:48.3444077,lon:-103.5596871},
+ {id:'res-6',label:'Residence 6',lat:48.414674,lon:-103.386483}
 ];
 const DEFAULT_PROPERTY_ID='res-1';
 const DEFAULT_PROPERTY=RESIDENTIAL_PROPERTIES.find(p=>p.id===DEFAULT_PROPERTY_ID);
